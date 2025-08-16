@@ -14,9 +14,13 @@ export function BigCats() {
   return (
     <div className="big-cats">
       <h2>Big Cats</h2>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
+      <ul style={{ display: 'flex', //arrange in a row
+          gap: '20px', //space between items
+        flexWrap: "wrap", // wrap to next line if too many
+         listStyleType: 'none', 
+         padding: 0 }}>
         {cats.map((cat, index) => (
-          <SingleCat key={index} name={cat.name} latinName={cat.latinName} />
+          <SingleCat key={index} cat={cat} />
         ))}
       </ul>
     </div>

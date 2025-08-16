@@ -7,7 +7,7 @@ import Greeting from './components/Greeting'
 import { BigCats } from './components/BigCats';
 
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0)
   return (
     <>
@@ -19,3 +19,4 @@ function App() {
       </>
     );
 }
+
