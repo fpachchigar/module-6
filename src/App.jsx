@@ -1,16 +1,21 @@
 import { useState } from 'react'
+import React from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Greeting from './components/Greeting'
+import { BigCats } from './components/BigCats';
+
+
 function App() {
   const [count, setCount] = useState(0)
-
   return (
-   <>
-   <Greeting name="John" > </Greeting>
-   </>
-  )
+    <>
+      <Greeting name="john"></Greeting>
+    <div>
+        <h1>Cat Gallery</h1>
+        <BigCats />
+      </div>
+      </>
+    );
 }
-
-export default App
