@@ -49,6 +49,16 @@ export function BigCats() {
     setDisplayedCats(cats);
   };
 
+  const addCat = (newCat) => {
+    setDisplayedCats((prevCats) => [...prevCats, newCat]);
+  };
+
+  const deleteCat = (indexToDelete) => {
+    setDisplayedCats((prevCats) =>
+      prevCats.filter((_, index) => index !== indexToDelete)
+    );
+  };
+
   return (
     <div className="big-cats">
       <h2>Big Cats</h2>
@@ -68,7 +78,24 @@ export function BigCats() {
         }}
       >
         {displayedCats.map((cat, index) => (
-          <SingleCat key={index} cat={cat} />
+          <li key={index} style={{ position: "relative" }}>
+            <SingleCat cat={cat} />
+            <button
+              onClick={() => deleteCat(index)}
+              style={{
+                position: "absolute",
+                top: "5px",
+                right: "5px",
+                background: "red",
+                color: "white",
+                border: "none",
+                borderRadius: "5px",
+                cursor: "pointer",
+              }}
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </div>
