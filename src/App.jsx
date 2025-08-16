@@ -6,10 +6,11 @@ import "./App.css";
 import Greeting from "./components/Greeting";
 import { BigCats } from "./components/BigCats";
 import Emoji from "./components/Emoji";
+import { Calculator } from "./components/Calculator";
 
 export default function App() {
   const [count, setCount] = useState(0);
-  
+
   return (
     <>
       <Greeting name="john"></Greeting>
@@ -20,7 +21,10 @@ export default function App() {
       <div>
         <h1>Emoji Mood Switcher</h1>
         <Emoji />
-        </div>  
-     </>
+      </div>
+      <div>
+        <Calculator />
+      </div>
+    </>
   );
 }
